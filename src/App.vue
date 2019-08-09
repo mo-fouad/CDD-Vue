@@ -1,28 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="login-page" id="app">
+    <LangSwitch></LangSwitch>
+    <Notifications></Notifications>
+    <Login></Login>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  import Login from './components/Login.vue'
+  import Notifications from './helpers/Notifications.vue'
+  import LangSwitch from './helpers/LangSwitch.vue'
 
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
+  export default {
+    name: 'app',
+    components: {
+      Login,
+      Notifications,
+      LangSwitch
+    },
+    mounted() {
+    },
+    methods: {
+      NotificationIsSucess: function () {
+      }
+    }
+
   }
-}
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import "../src/scss/vars";
+  @import "../src/scss/app";
+
 </style>
